@@ -4,15 +4,17 @@ import {
     Routes,
     Navigate,
   } from "react-router-dom";
-
+import Layout from './layouts/Layout';
   
   const App = () => {
 
     return (
+        
       <Router>
         <Routes>
           <Route 
-            path="/" element={<>Home page</>}>
+            path="/" element={<Layout></Layout>}>
+
           </Route>
         </Routes>
       </Router>
