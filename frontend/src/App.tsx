@@ -14,7 +14,12 @@ import Layout from './layouts/Layout';
         <Routes>
           <Route 
             path="/" element={<Layout></Layout>}>
-
+          </Route>
+          <Route 
+            path="/search" element={<Layout></Layout>}>
+          </Route>
+          <Route 
+            path="/*" element={<Layout></Layout>}>
           </Route>
         </Routes>
       </Router>
