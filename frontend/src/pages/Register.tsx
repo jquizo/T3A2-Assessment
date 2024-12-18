@@ -26,7 +26,7 @@ const Register = () => {
   });
 
     const onSubmit = handleSubmit((data) => {
-        console.log(data);
+      mutation.mutate(data);
     });
 
   return (
