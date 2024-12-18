@@ -19,8 +19,8 @@ export const AppContextProvider = ({
 }: { children: React.ReactNode;
 }) => {
     return (
-        <AppContextProvider>
+        <AppContext.Provider value={{showToast: () => undefined}}>
             {children}
-        </AppContextProvider>
+        </AppContext.Provider>
     )
 };
