@@ -18,6 +18,8 @@ export const AppContextProvider = ({
     children,
 }: { children: React.ReactNode;
 }) => {
+    const [toast, setToast] = useState<ToastMessage | undefined>(undefined);
+    
     return (
         <AppContext.Provider value={{showToast: () => undefined}}>
             {children}
