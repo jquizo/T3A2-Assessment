@@ -9,12 +9,17 @@ export type RegisterFormData = {
   };
   
 
+
 const Register = () => {
 
-  const {register,watch} = useForm<RegisterFormData>()
+  const {register,watch,handleSubmit} = useForm<RegisterFormData>()
+
+    const onSubmit = handleSubmit((data) => {
+        console.log(data);
+    });
 
   return (
-    <form className="flex flex-col gap-5">
+    <form className="flex flex-col gap-5" onSubmit={onSubmit}>
       <h2 className="text-3xl font-bold">Create an Account</h2>
       <div className="flex flex-col md:flex-row gap-5">
         {/* First Name input */}
