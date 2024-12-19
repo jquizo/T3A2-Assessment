@@ -36,7 +36,7 @@ router.post("/login",
           const token = jwt.sign(
             { userId: user.id },
             process.env.JWT_SECRET_KEY as string,
-            {
+            { 
               expiresIn: "1d",
             }
           );
@@ -58,5 +58,14 @@ router.post("/login",
 router.get("/validate-token", verifyToken, (req: Request, res: Response) => {
   res.status(200).send({ userId: req.userId });
 });
+
+// 
+router.post("/logout", (req: Request, res: Response) => {
+  res.cookie("auth_token", "", {
+    expires: new Date(0),
+  });
+  res.send();
+});
+
 
 export default router;
