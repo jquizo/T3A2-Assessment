@@ -2,7 +2,6 @@ import {
     BrowserRouter as Router,
     Route,
     Routes,
-    Navigate,
   } from "react-router-dom";
 import Layout from './layouts/Layout';
 import Register from "./pages/Register";
@@ -15,10 +14,10 @@ import SignIn from "./pages/SignIn";
       <Router>
         <Routes>
           <Route 
-            path="/" element={<Layout></Layout>}>
+            path="/" element={<Layout>Home</Layout>}>
           </Route>
           <Route 
-            path="/search" element={<Layout></Layout>}>
+            path="/search" element={<Layout>Search</Layout>}>
           </Route>
           <Route 
             path="/register" element={<Layout><Register/></Layout>}>
@@ -27,7 +26,7 @@ import SignIn from "./pages/SignIn";
             path="/sign-in" element={<Layout><SignIn/></Layout>}>
           </Route>
           <Route 
-            path="/*" element={<Layout></Layout>}>
+            path="/*" element={<Layout>/</Layout>}>
           </Route>
         </Routes>
       </Router>
