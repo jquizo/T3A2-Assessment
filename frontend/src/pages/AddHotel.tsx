@@ -21,7 +21,7 @@ const AddHotel = () => {
     
 
     return (
-        <div><ManageHotelForm onSave={handleSave}/></div>
+        <div><ManageHotelForm onSave={handleSave} isLoading={isLoading}/></div>
     )
 };
   
