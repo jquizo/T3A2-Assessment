@@ -18,14 +18,28 @@ export type HotelFormData = {
 
 const ManageHotelForm = () => {
     const formMethods = useForm<HotelFormData>();
+    const { handleSubmit } = formMethods;
 
+    const onSubmit = handleSubmit((formData: HotelFormData) => {
+
+        
+    })
   
     return (
         <FormProvider {...formMethods}>
-            <form>
+            <form onSubmit={onSubmit}>
             <HotelDetailsSection />
             <GuestsSection />
             <ImagesSection />
+            {/* Submit Button  */}
+            <span className="flex justify-end">
+            <button
+            type="submit"
+            className="bg-slate-700 text-white p-2 rounded-md font-bold hover:bg-blue-500 text-xl disabled:bg-gray-500"
+            >
+            Save Hotel
+            </button>
+            </span>
             </form>
         </FormProvider>
         
