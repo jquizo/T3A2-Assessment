@@ -21,7 +21,7 @@ const ManageHotelForm = () => {
     const { handleSubmit } = formMethods;
 
     const onSubmit = handleSubmit((formData: HotelFormData) => {
-
+        console.log(formData)
         
     })
   
