@@ -8,8 +8,8 @@ const Header = () => {
   return (
     <div className="bg-slate-700 py-6">
       <div className="container mx-auto flex justify-between">
-        <span className="text-3xl text-white font-bold tracking-tight">
-          <Link to="/">Booking</Link>
+        <span className="text-3xl text-white font-bold tracking-tight hover:text-blue-600">
+          <Link to="/">Mern Booking App </Link>
         </span>
         <span className="flex space-x-2">
         {isLoggedIn ? (
