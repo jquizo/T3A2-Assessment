@@ -20,9 +20,20 @@ const ManageHotelForm = () => {
     const formMethods = useForm<HotelFormData>();
     const { handleSubmit } = formMethods;
 
-    const onSubmit = handleSubmit((formData: HotelFormData) => {
-        console.log(formData)
+    const onSubmit = handleSubmit((formDataJson: HotelFormData) => {
+        const formData = new FormData();
         
+        formData.append("name", formDataJson.name);
+        formData.append("city", formDataJson.city);
+        formData.append("country", formDataJson.country);
+        formData.append("description", formDataJson.description);
+        formData.append("pricePerNight", formDataJson.pricePerNight.toString());
+        formData.append("adultCount", formDataJson.adultCount.toString());
+        formData.append("childCount", formDataJson.childCount.toString());
+
+        Array.from(formDataJson.imageFiles).forEach((imageFile) => {
+            formData.append(`imageFiles`, imageFile);
+          });
     })
   
     return (
