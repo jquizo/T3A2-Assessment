@@ -17,10 +17,12 @@ cloudinary.config({
 
 mongoose.connect(process.env.MONGODB_CONNECTION_STRING as string);
 
+// Initialize Express
 const app = express();
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+// Configure CORS to allow requests from the frontend
 app.use(cors({
   origin: process.env.FRONTEND_URL,
   credentials: true,
@@ -28,9 +30,14 @@ app.use(cors({
 
 app.use(express.static(path.join(__dirname, "../../frontend/dist")));
 
-app.use("/api/auth", authRoutes);
-app.use("/api/users", userRoutes);
-app.use("/api/my-hotels", myHotelRoutes);
+// API routes
+app.use("/api/auth", authRoutes); // Routes for authentication/login
+app.use("/api/users", userRoutes); // Routes for user management/registration
+app.use("/api/my-hotels", myHotelRoutes); // Routes for managing hotels
+
+app.get("*", (req: Request, res: Response) => {
+  res.sendFile(path.join(__dirname, "../../frontend/dist/index.html"));
+});
 
 app.listen(7000, () => {
     console.log("server running on localhost:7000");
