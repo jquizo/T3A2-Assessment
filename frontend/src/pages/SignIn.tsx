@@ -63,16 +63,16 @@ const SignIn = () => {
                 <span className="text-red-500">{errors.password.message}</span>
                 )}
             </label>
-            <span className="flex items-center justify-between">
-                <span className="text-sm">
+            <span className="flex items-center justify-between ">
+                <span className="text-md font-bold">
                 Not Registered?{" "}
-                <Link className="underline" to="/register">
-                    Create an account here
+                <Link className="underline text-gray-800 hover:text-blue-500" to="/register">
+                     Create an account here
                 </Link>
                 </span>
                 <button
                 type="submit"
-                className="bg-blue-600 text-white p-2 font-bold hover:bg-blue-500 text-xl"
+                className="bg-slate-800 text-white px-3 py-2 rounded-lg font-bold hover:bg-blue-500 text-xl"
                 >
                 Login
                 </button>
