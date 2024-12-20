@@ -3,12 +3,14 @@ import {
     Route,
     Routes,
   } from "react-router-dom";
+
 import Layout from './layouts/Layout';
 import Register from "./pages/Register";
 import SignIn from "./pages/SignIn";
 import AddHotel from "./pages/AddHotel";
 import MyHotels from "./pages/MyHotels";
 import EditHotel from "./pages/EditHotel";
+import Home from "./pages/Home";
 import { useAppContext } from "./contexts/AppContext";
 
   const App = () => {
@@ -18,7 +20,7 @@ import { useAppContext } from "./contexts/AppContext";
       <Router>
         <Routes>
           <Route 
-            path="/" element={<Layout>Home</Layout>}>
+            path="/" element={<Layout><Home/></Layout>}>
           </Route>
           <Route 
             path="/search" element={<Layout>Search</Layout>}>
